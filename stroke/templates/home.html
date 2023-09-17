@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="{% static 'bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+</head>
+<body>
+ <div class="container bg-light">
+     <img src="">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 bg-dark">
+            <h1 class="text-light">Enter details of Patient</h1>
+
+            <form action="/result/"  method="post">
+                {% csrf_token %}
+                <input type="number" name="age" id="age" placeholder="Enter Age" class="form-group form-control">
+                <input type="number" name="glucose" id="glucose" placeholder="Enter Glucose value" class="form-group form-control">
+                <input type="number" name="bp" id="bp" placeholder="Hyper Tension(Yes[1]No[0])" class="form-group form-control">
+                <input type="number" name="hd" id="hd" placeholder="Heart Problem(Yes[1]No[0])" class="form-group form-control">
+                <input type="number" name="bmi" id="bmi" placeholder="Enter BMI" class="form-group form-control">
+                <input type="text" name="gender" id="gender" placeholder="Male\Female" class="form-group form-control">
+                <input type="text" name="married" id="married" placeholder="Yes\No" class="form-group form-control">
+                <input type="text" name="work" id="work" placeholder="Private\Self-employed\Govt_job\children" class="form-group form-control">
+                <input type="text" name="residence" id="residence" placeholder="Urban\Rural" class="form-group form-control">
+                <input type="text" name="smoke" id="smoke" placeholder="formerly smoked\never smoked\smokes\Unknown" class="form-group form-control">
+                <button class="btn btn-outline-danger">Get Results</button>
+            </form>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    </div>
+</body>
+</html>
